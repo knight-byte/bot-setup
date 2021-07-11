@@ -8,11 +8,9 @@ Do fork and star ⭐ this repository if you like it.
 
 ## Prerequisites
 
-[x] Python >= 3.6
-
-[x] Curl
-
-[x] Pip
+- [x] Python >= 3.6
+- [x] Curl
+- [x] Pip
 
 ## Setup
 
