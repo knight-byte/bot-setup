@@ -32,7 +32,7 @@ DONE 🙂
 
 > preview
 
-[![prev](asserts/preview.png)](https://asciinema.org/a/PEBxxUvd9eNWUEjDFvDlyyBv)
+[![prev](asserts/preview.png)](https://asciinema.org/a/KPEBxxUvd9eNWUEjDFvDlyyBv)
 
 ## After Setup
 
