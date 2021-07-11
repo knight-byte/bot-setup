@@ -1,0 +1,47 @@
+"""
+#---------------------------------------------------------+
+    _    _                            _                   |
+   / \  | |__  _   _ _ __   __ _  ___| |__   __ _ _ __    |
+  / _ \ | '_ \| | | | '_ \ / _` |/ __| '_ \ / _` | '__|   |
+ / ___ \| |_) | |_| | | | | (_| | (__| | | | (_| | |      |    
+/_/   \_\_.__/ \__,_|_| |_|\__,_|\___|_| |_|\__,_|_|      |
+                                                          |
+#----------------------------------+----------------------+
+    Filname : __main__.py  |
+    Author  : Abunachar    |
+    Github  : knight-byte  |
+#--------------------------+                                                     
+"""
+
+#--------- IMPORT --------
+from <UserDirName> import updater, dp
+from <UserDirName>.utility.basic_func import start
+from telegram.ext import CommandHandler
+
+# -----------------MAIN METHOD ---------------------
+def main():
+    # ------------ COMMAMD HANDLER ----------
+    dp.add_handler(CommandHandler("start", start, run_async=True))
+
+    # ---------- SYSTEM POLLING ---------------------
+    updater.start_polling()
+
+    # ------------ WEBHOOK ---------------
+
+    # Note : Uncomment below code to start the WEBHOOK
+    # And do not forgot to comment out SYSTEM POLLING 
+    # in Profile change :
+    # web: python -m <UserDirName>
+
+    """
+    updater.start_webhook(listen="0.0.0.0",
+                          port=int(PORT),
+                          url_path=BOT_TOKEN, webhook_url=URL+BOT_TOKEN)
+    """
+
+    #---------- IDLE ---------
+    updater.idle()
+
+
+if __name__ == '__main__':
+    main()

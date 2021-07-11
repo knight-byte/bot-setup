@@ -1,0 +1,55 @@
+"""
+#---------------------------------------------------------+
+    _    _                            _                   |
+   / \  | |__  _   _ _ __   __ _  ___| |__   __ _ _ __    |
+  / _ \ | '_ \| | | | '_ \ / _` |/ __| '_ \ / _` | '__|   |
+ / ___ \| |_) | |_| | | | | (_| | (__| | | | (_| | |      |    
+/_/   \_\_.__/ \__,_|_| |_|\__,_|\___|_| |_|\__,_|_|      |
+                                                          |
+#----------------------------------+----------------------+
+    Filname : constants.py |
+    Author  : Abunachar    |
+    Github  : knight-byte  |
+#--------------------------+                                                     
+"""
+
+# ------------ IMPORTS -------------
+import os
+
+# ------------ CONSTANTS -----------
+BOT_TOKEN = os.environ.get('bot_token') # bot token
+URL = "" # bot deployed website
+PORT = int(os.environ.get("PORT", 5000)) # web hook port
+
+# ----------- CONSTANT FUNCTIONS ----------
+# ---- get user chat_id
+def USER_CHAT_ID(update):
+    return str(update.message.chat_id if update.message != None else update.callback_query.message.chat_id)
+
+# ---- get user effective chat id
+def USER_CHAT_ID_EFFECTIVE(update):
+    return str(update.effective_user.id)
+
+# ---- get grp/channel/private chat id
+def CHAT_ID_EFFECTIVE(update):
+    return str(update.effective_chat.id)
+
+# ---- get user first name
+def USER_FIRSTNAME(update):
+    return update.message.from_user.first_name
+
+# ---- get user effective first name
+def USER_FIRSTNAME_EFFECTIVE(update):
+    return str(update.effective_user.first_name)
+
+# ---- get user username
+def USER_USERNAME_EFFECTIVE(update):
+    return str(update.effective_user.username)
+
+# ---- get message id
+def USER_MSG_ID(update):
+    return str(update.message.message_id if update.message != None else update.callback_query.message.message_id)
+
+# ---- get chat type ( group/supergroup/channel/private )
+def USER_CHAT_TYPE(update):
+    return str(update.message.chat.type if update.message != None else update.callback_query.message.chat.type)
