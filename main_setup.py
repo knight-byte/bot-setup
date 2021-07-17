@@ -154,7 +154,7 @@ class Setup:
     def python_version(self) -> None:
         py_ver = "python3 --version"
         status, msg = self.command_execute(command=py_ver)
-        if status == -1:
+        if status == 0:
             ver = msg.split()[1]
             text = f"Python3 Found v{ver}"
             print(self.success_highlight(text))
@@ -163,7 +163,7 @@ class Setup:
         else:
             py_ver = "python --version"
             status, msg = self.command_execute(command=py_ver)
-            ver = msg.split()[1]
+            ver = msg.split()
             temp = float(".".join(ver.split(".")[:2]))
             if temp > 3.6:
                 text = f"Python Found v{ver}"
