@@ -230,7 +230,7 @@ class Setup:
         print(self.unknown_hightlight(text), end="\r")
         py = "python" + ("3" if self.PY3 else "")
         for package in self.required_package:
-            path = "env/bin/" if self.USER_OS == 0 else "env\\Scripts\\"
+            path = "env/local/bin/" if self.USER_OS == 0 else "env\\Scripts\\"
             install_req = f"{path}{py} -m pip install {package}"
             status, _ = self.command_execute(install_req)
             print(" "*(2*len(text)), end="\r")
@@ -296,7 +296,7 @@ export bot_token={self.BOT_TOKEN}
             export_txt = f'set "bot_token={self.BOT_TOKEN}"'
             ext = ".bat"
 
-        path = "env/bin/" if self.USER_OS == 0 else "env\\Scripts\\"
+        path = "env/local/bin/" if self.USER_OS == 0 else "env\\Scripts\\"
         with open(f"{path}activate{ext}", "a") as f:
             f.write(export_txt)
 
@@ -313,7 +313,7 @@ export bot_token={self.BOT_TOKEN}
         print(" "*(2*len(text)), end="\r")
         text = f"Adding requirements.txt"
         print(self.unknown_hightlight(text), end="\r")
-        path = "env/bin/" if self.USER_OS == 0 else "env\\Scripts\\"
+        path = "env/local/bin/" if self.USER_OS == 0 else "env\\Scripts\\"
         req_com = f"{path}{py} -m pip freeze"
         status, msg = self.command_execute(command=req_com)
         if status == 0:
@@ -351,7 +351,7 @@ export bot_token={self.BOT_TOKEN}
         win = r".\env\Scripts\activate"
         text = f"""
 {self.color.WARNING}[ 1 ]{self.color.BLUE} : start up virtualenv
-        {self.color.HEADER}{"source env/bin/activate" if self.USER_OS==0 else win} 
+        {self.color.HEADER}{"source env/local/bin/activate" if self.USER_OS==0 else win} 
 {self.color.WARNING}[ 2 ]{self.color.BLUE} : start bot
         {self.color.HEADER}{"python" + ("3" if self.PY3 else "")} -m {self.PROJECT_NAME}
 {self.color.CYAN}
