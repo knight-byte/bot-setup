@@ -164,7 +164,7 @@ class Setup:
             py_ver = "python --version"
             status, msg = self.command_execute(command=py_ver)
             ver = msg.split()
-            temp = float(".".join(ver.split(".")[:2]))
+            temp = float(".".join(ver[1].split(".")[:2]))
             if temp > 3.6:
                 text = f"Python Found v{ver}"
                 print(self.success_highlight(text))
